@@ -21,6 +21,13 @@ def edit
       render 'edit'
     end
   end
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+   
+    redirect_to articles_path
+  end
+
 def create
     # renvoie : #<ActionController::Parameters {"title"=>"ee", "text"=>"ee"} permitted: false>
     # render plain: params[:article].inspect
